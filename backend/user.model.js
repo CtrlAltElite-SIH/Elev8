@@ -12,8 +12,7 @@ let BlogSchema = Schema({
     },
     content :{
         type : String
-    }
-
+    },
 });
 
 let SkillSchema = Schema({
@@ -41,6 +40,10 @@ let User = Schema({
     name :{
         type:String
     },
+    email: String,
+    password: String,
+    googleId: String,
+    facebookId: String,
     userName :{
         type:String
     },
