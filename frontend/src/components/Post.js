@@ -47,7 +47,7 @@ export default class Post extends Component{
         this.setState({
             title: '',
             content: '',
-            blog_completed: false
+            author: ''
         });
     }
 

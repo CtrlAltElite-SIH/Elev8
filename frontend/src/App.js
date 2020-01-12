@@ -9,6 +9,7 @@ import Feed from "./components/Feed";
 import Profile from "./components/Profile";
 import List from "./components/List";
 import Home from "./components/Home";
+import Blog from "./components/Blog";
 class App extends Component {
   render() {
     /* jshint ignore:start */
@@ -40,8 +41,9 @@ class App extends Component {
           <Route path="/home" component={Feed} />
           <Route path="/Mentors" component={List} />
           <Route path="/Internships" component={List} />
-          <Route path="/:userId/Post" component={Post} />
+          <Route path="/Post" component={Post} />
           <Route path="/blogs" component={Blogs} />
+          <Route path="/blog/:id" component={Blog} />
         </div>
       </Router>
     );
