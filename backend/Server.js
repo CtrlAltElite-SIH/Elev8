@@ -108,13 +108,22 @@ appRoutes.route("/blogs").get(function(req, res) {
   });
 });
 
-appRoutes.route("/:userId/blogs").get(function(req, res) {
-  let id = req.params.userId;
-  User.findById(id, function(err, user) {
+appRoutes.route("/:blogId/blogs").get(function(req, res) {
+  let blogId = req.params.blogId;
+  console.log(blogId);
+  let id = "5e18b71f26dbef24e48b937e";
+  User.findOne({ _id: id }, function(err, user) {
     if (err) {
       console.log(err);
     } else {
-      res.json(user.blogs);
+      var blogs = user.blogs;
+      blogs.forEach(function(blog) {
+        
+        if (blog.id === blogId) {
+          console.log(blog.id);
+          res.json(blog);
+        }
+      });
     }
   });
 });
